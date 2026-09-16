@@ -1,0 +1,1 @@
+Piletikassa on õppeprojekt piletikassa rakenduse arendamiseks.

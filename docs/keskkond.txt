@@ -1,0 +1,12 @@
+Arenduskeskkonna kontroll
+Nimi: azhar
+Kuupäev: 16.09.2026
+
+C:\> node --version
+v24.21.0
+
+C:\> npm --version
+11.19.0
+
+C:\> git --version
+git version 2.55.0.windows.5
