@@ -1,0 +1,26 @@
+Ülesanne 5 - vormi saatmise tulemus
+
+Meetod GET, pärast vormi täitmist:
+
+file:///C:/Users/soya/Documents/piletikassa/avalik/index.html?from=2026-09-17&available=18&sort=date&availableOnly=1&email=ryskhan%40ut.ee
+
+Tähelepanekud:
+1. Päringustringi võtmed tulevad vormiväljade name-atribuutidest.
+2. Märkeruut availableOnly ilmus aadressile kujul availableOnly=1, sest märkeruut oli valitud.
+3. E-posti aadressis olev @ kodeeriti kujule %40.
+
+Meetod POST, sama vorm:
+
+Aadressiriba:
+C:/Users/soya/Documents/piletikassa/avalik/index.html
+
+Network-paneeli Payload all:
+from=2026-09-09
+available=1
+sort=date
+availableOnly=1
+email=ryskhan@ut.ee
+
+Tähelepanek:
+GET-meetodi puhul olid vormi andmed aadressiribal päringustringis.
+POST-meetodi puhul ei olnud vormi andmeid aadressiribal, vaid need saadeti päringu kehas Form Data all.
