@@ -1,0 +1,217 @@
+@layer base, framework, components, ours, exception;
+
+@import url("../materials/public/style-2.css") layer(framework);
+
+
+/* =========================
+   BASE
+   ========================= */
+
+@layer base {
+
+    :root {
+        --surface: #ffffff;
+        --surface-soft: #f4f6f8;
+
+        --text: #1f2933;
+        --text-muted: #52606d;
+
+        --line: #cbd5df;
+
+        --accent: #0b526b;
+        --accent-text: #ffffff;
+
+        --error: #c83b3b;
+
+        --space-1: 0.5rem;
+        --space-2: 1rem;
+        --space-3: 1.5rem;
+
+        --radius: 0.4rem;
+
+        color-scheme: light;
+    }
+
+    @media (prefers-color-scheme: dark) {
+
+        :root {
+            --surface: #171717;
+            --surface-soft: #242424;
+
+            --text: #f5f5f5;
+            --text-muted: #c7c7c7;
+
+            --line: #555555;
+
+            --accent: #62b8d2;
+            --accent-text: #111111;
+
+            --error: #ff8181;
+
+            color-scheme: dark;
+        }
+    }
+
+    :root[data-theme="light"] {
+        --surface: #ffffff;
+        --surface-soft: #f4f6f8;
+
+        --text: #1f2933;
+        --text-muted: #52606d;
+
+        --line: #cbd5df;
+
+        --accent: #0b526b;
+        --accent-text: #ffffff;
+
+        --error: #c83b3b;
+
+        color-scheme: light;
+    }
+
+    :root[data-theme="dark"] {
+        --surface: #171717;
+        --surface-soft: #242424;
+
+        --text: #f5f5f5;
+        --text-muted: #c7c7c7;
+
+        --line: #555555;
+
+        --accent: #62b8d2;
+        --accent-text: #111111;
+
+        --error: #ff8181;
+
+        color-scheme: dark;
+    }
+
+    body {
+        background: var(--surface);
+        color: var(--text);
+    }
+}
+
+
+/* =========================
+   FRAMEWORK
+   ========================= */
+
+@layer framework {
+
+    .field {
+        border: 2px solid gray;
+        padding: var(--space-1);
+    }
+}
+
+
+/* =========================
+   COMPONENTS
+   ========================= */
+
+@layer components {
+
+    fieldset {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: var(--space-2);
+        margin-bottom: var(--space-3);
+        background: var(--surface);
+    }
+
+    .page .field {
+        margin-block: var(--space-1);
+    }
+
+    :where(h1, h2, h3) {
+        line-height: 1.2;
+    }
+
+    :is(h2, h3) {
+        color: var(--text);
+    }
+
+    .cards > li :is(h2, h3) {
+        margin-top: 0;
+    }
+
+    .cards > li:not(.featured) {
+        opacity: 0.95;
+    }
+
+    .error:not(:empty) {
+        color: var(--error);
+    }
+
+    :root:not([data-theme="light"]) {
+        --theme-example: dark;
+    }
+}
+
+
+/* =========================
+   OURS
+   ========================= */
+
+@layer ours {
+
+    body {
+        background: var(--surface);
+        color: var(--text);
+    }
+
+    h1,
+    h2,
+    h3,
+    p,
+    label,
+    legend {
+        color: var(--text);
+    }
+
+    fieldset {
+        background: var(--surface);
+        color: var(--text);
+        border-color: var(--line);
+    }
+
+    .field {
+        border: 2px solid var(--accent);
+        border-radius: var(--radius);
+        padding: var(--space-1);
+        background: var(--surface);
+        color: var(--text);
+    }
+
+    input.field,
+    select.field {
+        background: var(--surface);
+        color: var(--text);
+    }
+
+    button {
+        background: var(--accent);
+        color: var(--accent-text);
+        border: 0;
+        border-radius: var(--radius);
+        padding: var(--space-1) var(--space-2);
+        cursor: pointer;
+    }
+
+    .cards {
+        color: var(--text);
+    }
+}
+
+
+/* =========================
+   EXCEPTION
+   ========================= */
+
+@layer exception {
+
+    #purchase .field {
+        outline-offset: 2px;
+    }
+}
