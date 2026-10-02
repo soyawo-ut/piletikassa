@@ -1,101 +1,269 @@
 <!DOCTYPE html>
 <html lang="et">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Piletikassa</title>
-</head>
-<body>
 
-<header>
-    <h1>Piletikassa</h1>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <nav>
-        <a href="#sundmused">Sündmused</a>
-        <a href="#otsing">Otsing</a>
-    </nav>
-</header>
+		<title>Piletikassa</title>
 
-<main>
-    <section id="sundmused">
-        <h2>Sündmused</h2>
+		<link rel="stylesheet" href="../materials/public/style-1.css" />
+	</head>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Kuupäev</th>
-                    <th>Algus</th>
-                    <th>Toimumiskoht</th>
-                    <th>Vabu kohti</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>20.09.2026</td>
-                    <td>18:00</td>
-                    <td>Narva</td>
-                    <td>12</td>
-                </tr>
-                <tr>
-                    <td>25.09.2026</td>
-                    <td>19:00</td>
-                    <td>Tartu</td>
-                    <td>8</td>
-                </tr>
-                <tr>
-                    <td>30.09.2026</td>
-                    <td>17:30</td>
-                    <td>Tallinn</td>
-                    <td>20</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+	<body>
 
-    <section id="otsing">
-        <h2>Otsi sündmusi</h2>
+		<!-- Hüppelink -->
+		<a class="skip-link" href="#main-content">
+			Liigu põhisisu juurde
+		</a>
 
-        <form method="post">
-            <fieldset>
-                <legend>Otsinguvalikud</legend>
+		<!-- Päis -->
+		<header>
+			<h1>Piletikassa</h1>
 
-                <p>
-                    <label for="from">Kuupäev:</label>
-                    <input type="date" id="from" name="from">
-                </p>
+			<nav aria-label="Põhinavigatsioon">
+				<a href="#sundmused">Sündmused</a>
+				<a href="#otsing">Otsing</a>
+				<a href="#esiletostetud">Esiletõstetud</a>
+			</nav>
+		</header>
 
-                <p>
-                    <label for="available">Vabu kohti vähemalt:</label>
-                    <input type="number" id="available" name="available" min="1" max="24">
-                </p>
+		<!-- Põhisisu -->
+		<main id="main-content">
 
-                <p>
-                    <label for="sort">Sorteerimine:</label>
-                    <select id="sort" name="sort">
-                        <option value="date">Kuupäeva järgi</option>
-                        <option value="available">Vabade kohtade järgi</option>
-                    </select>
-                </p>
+			<!-- Sündmuste tabel -->
+			<section id="sundmused" aria-labelledby="sundmused-title">
 
-                <p>
-                    <input type="checkbox" id="availableOnly" name="availableOnly" value="1">
-                    <label for="availableOnly">Ainult vabade kohtadega sündmused</label>
-                </p>
+				<h2 id="sundmused-title">
+					Sündmused
+				</h2>
 
-                <p>
-                    <label for="email">E-post:</label>
-                    <input type="email" id="email" name="email">
-                </p>
+				<table>
 
-                <button type="submit">Otsi</button>
-            </fieldset>
-        </form>
-    </section>
-</main>
+					<caption>
+						Sündmuste võrdlus
+					</caption>
 
-<footer>
-    <p>Piletikassa 2026</p>
-</footer>
+					<thead>
+						<tr>
+							<th scope="col">Kuupäev</th>
+							<th scope="col">Algus</th>
+							<th scope="col">Toimumiskoht</th>
+							<th scope="col">Vabu kohti</th>
+						</tr>
+					</thead>
 
-</body>
+					<tbody>
+
+						<tr>
+							<th scope="row">20.09.2026</th>
+							<td>18:00</td>
+							<td>Narva</td>
+							<td>12</td>
+						</tr>
+
+						<tr>
+							<th scope="row">25.09.2026</th>
+							<td>19:00</td>
+							<td>Tartu</td>
+							<td>8</td>
+						</tr>
+
+						<tr>
+							<th scope="row">30.09.2026</th>
+							<td>17:30</td>
+							<td>Tallinn</td>
+							<td>20</td>
+						</tr>
+
+					</tbody>
+
+				</table>
+
+			</section>
+
+
+			<!-- Otsing -->
+			<section id="otsing" aria-labelledby="otsing-title">
+
+				<h2 id="otsing-title">
+					Otsi sündmusi
+				</h2>
+
+				<form method="post">
+
+					<fieldset>
+
+						<legend>
+							Otsinguvalikud
+						</legend>
+
+						<p>
+							<label for="from">
+								Kuupäev:
+							</label>
+
+							<input
+								type="date"
+								id="from"
+								name="from"
+                        />
+						</p>
+
+						<p>
+							<label for="available">
+								Vabu kohti vähemalt:
+							</label>
+
+							<input
+								type="number"
+								id="available"
+								name="available"
+								min="1"
+								max="24"
+                        />
+						</p>
+
+						<p>
+							<label for="sort">
+								Sorteerimine:
+							</label>
+
+							<select id="sort" name="sort">
+
+								<option value="date">
+									Kuupäeva järgi
+								</option>
+
+								<option value="available">
+									Vabade kohtade järgi
+								</option>
+
+							</select>
+						</p>
+
+						<p>
+
+							<input
+								type="checkbox"
+								id="availableOnly"
+								name="availableOnly"
+								value="1"
+                        />
+
+							<label for="availableOnly">
+								Ainult vabade kohtadega sündmused
+							</label>
+
+						</p>
+
+						<p>
+							<label for="email">
+								E-post:
+							</label>
+
+							<input
+								type="email"
+								id="email"
+								name="email"
+                        />
+						</p>
+
+						<button type="submit">
+							Otsi
+						</button>
+
+					</fieldset>
+
+				</form>
+
+			</section>
+
+
+			<!-- Esiletõstetud sündmused -->
+			<section
+				id="esiletostetud"
+				aria-labelledby="esiletostetud-title"
+        >
+
+				<h2 id="esiletostetud-title">
+					Esiletõstetud sündmused
+				</h2>
+
+				<ul>
+
+					<li>
+						<article>
+
+							<h3>
+								Kontsert Narvas
+							</h3>
+
+							<p>
+								20.09.2026 kell 18:00
+							</p>
+
+							<p>
+								Vabu kohti: 12
+							</p>
+
+						</article>
+					</li>
+
+
+					<li>
+						<article>
+
+							<h3>
+								Kontsert Tartus
+							</h3>
+
+							<p>
+								25.09.2026 kell 19:00
+							</p>
+
+							<p>
+								Vabu kohti: 8
+							</p>
+
+						</article>
+					</li>
+
+
+					<li>
+						<article>
+
+							<h3>
+								Kontsert Tallinnas
+							</h3>
+
+							<p>
+								30.09.2026 kell 17:30
+							</p>
+
+							<p>
+								Vabu kohti: 20
+							</p>
+
+						</article>
+					</li>
+
+				</ul>
+
+			</section>
+
+		</main>
+
+
+		<!-- Jalus -->
+		<footer>
+
+			<p>
+				Piletikassa 2026
+			</p>
+
+		</footer>
+
+	</body>
+
 </html>
