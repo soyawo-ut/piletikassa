@@ -3,26 +3,46 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    />
 
     <title>Piletikassa - ostuvorm</title>
 
-    <link rel="stylesheet" href="layers.css" />
+    <link
+        rel="stylesheet"
+        href="layers.css"
+    />
+
+    <link
+        rel="stylesheet"
+        href="layout.css"
+    />
 </head>
 
 <body>
 
-    <main id="purchase" class="page">
+    <main
+        id="purchase"
+        class="page"
+    >
 
         <h1>Ostuvorm</h1>
 
-        <form id="purchase-form" novalidate>
+        <form
+            id="purchase-form"
+            novalidate
+        >
 
             <fieldset>
+
                 <legend>Ostja andmed</legend>
 
                 <p>
-                    <label for="name">Nimi</label>
+                    <label for="name">
+                        Nimi
+                    </label>
 
                     <input
                         class="field"
@@ -34,11 +54,18 @@
                         aria-describedby="name-error"
                     />
 
-                    <span id="name-error" class="error" aria-live="polite"></span>
+                    <span
+                        id="name-error"
+                        class="error"
+                        aria-live="polite"
+                    ></span>
                 </p>
 
+
                 <p>
-                    <label for="email">E-post</label>
+                    <label for="email">
+                        E-post
+                    </label>
 
                     <input
                         class="field"
@@ -49,11 +76,18 @@
                         aria-describedby="email-error"
                     />
 
-                    <span id="email-error" class="error" aria-live="polite"></span>
+                    <span
+                        id="email-error"
+                        class="error"
+                        aria-live="polite"
+                    ></span>
                 </p>
 
+
                 <p>
-                    <label for="email-confirm">Korda e-posti</label>
+                    <label for="email-confirm">
+                        Korda e-posti
+                    </label>
 
                     <input
                         class="field"
@@ -71,8 +105,11 @@
                     ></span>
                 </p>
 
+
                 <p>
-                    <label for="phone">Telefon</label>
+                    <label for="phone">
+                        Telefon
+                    </label>
 
                     <input
                         class="field"
@@ -84,16 +121,24 @@
                         aria-describedby="phone-error"
                     />
 
-                    <span id="phone-error" class="error" aria-live="polite"></span>
+                    <span
+                        id="phone-error"
+                        class="error"
+                        aria-live="polite"
+                    ></span>
                 </p>
 
             </fieldset>
 
+
             <fieldset>
+
                 <legend>Tellimuse andmed</legend>
 
                 <p>
-                    <label for="quantity">Piletite arv</label>
+                    <label for="quantity">
+                        Piletite arv
+                    </label>
 
                     <input
                         class="field"
@@ -114,8 +159,11 @@
                     ></span>
                 </p>
 
+
                 <p>
-                    <label for="event">Sündmus</label>
+                    <label for="event">
+                        Sündmus
+                    </label>
 
                     <select
                         class="field"
@@ -124,17 +172,37 @@
                         required
                         aria-describedby="event-error"
                     >
-                        <option value="">Vali sündmus</option>
-                        <option value="narva">Kontsert Narvas</option>
-                        <option value="tartu">Kontsert Tartus</option>
-                        <option value="tallinn">Kontsert Tallinnas</option>
+
+                        <option value="">
+                            Vali sündmus
+                        </option>
+
+                        <option value="narva">
+                            Kontsert Narvas
+                        </option>
+
+                        <option value="tartu">
+                            Kontsert Tartus
+                        </option>
+
+                        <option value="tallinn">
+                            Kontsert Tallinnas
+                        </option>
+
                     </select>
 
-                    <span id="event-error" class="error" aria-live="polite"></span>
+                    <span
+                        id="event-error"
+                        class="error"
+                        aria-live="polite"
+                    ></span>
                 </p>
 
+
                 <p>
-                    <label for="postal-code">Postiindeks</label>
+                    <label for="postal-code">
+                        Postiindeks
+                    </label>
 
                     <input
                         class="field"
@@ -153,7 +221,9 @@
                     ></span>
                 </p>
 
+
                 <p>
+
                     <input
                         type="checkbox"
                         id="terms"
@@ -166,10 +236,16 @@
                         Nõustun tingimustega
                     </label>
 
-                    <span id="terms-error" class="error" aria-live="polite"></span>
+                    <span
+                        id="terms-error"
+                        class="error"
+                        aria-live="polite"
+                    ></span>
+
                 </p>
 
             </fieldset>
+
 
             <button type="submit">
                 Osta
@@ -177,25 +253,99 @@
 
         </form>
 
-        <section aria-labelledby="cards-title">
-            <h2 id="cards-title">Näidisvalijad</h2>
+
+        <!-- Sündmuste kaardid -->
+
+        <section
+            class="events"
+            aria-labelledby="events-title"
+        >
+
+            <h2 id="events-title">
+                Sündmused
+            </h2>
 
             <ul class="cards">
-                <li>
-                    <h3>Tavaline kaart</h3>
-                    <p>Näidis :is() ja :not() jaoks.</p>
+
+                <li class="card">
+
+                    <article class="card-content">
+
+                        <h3>
+                            Kontsert Narvas
+                        </h3>
+
+                        <p>
+                            Kontsert toimub Narvas
+                            20.09.2026 kell 18:00.
+                            Vabu kohti on 12.
+                        </p>
+
+                        <a href="#purchase">
+                            Osta pilet
+                        </a>
+
+                    </article>
+
                 </li>
 
-                <li class="featured">
-                    <h3>Esiletõstetud kaart</h3>
-                    <p>Näidis spetsiifilisuse arvutamiseks.</p>
+
+                <li class="card">
+
+                    <article class="card-content">
+
+                        <h3>
+                            Kontsert Tartus
+                        </h3>
+
+                        <p>
+                            Kontsert toimub Tartus
+                            25.09.2026 kell 19:00.
+                            Vabu kohti on 8.
+                        </p>
+
+                        <a href="#purchase">
+                            Osta pilet
+                        </a>
+
+                    </article>
+
                 </li>
+
+
+                <li class="card">
+
+                    <article class="card-content">
+
+                        <h3>
+                            Kontsert Tallinnas
+                        </h3>
+
+                        <p>
+                            Kontsert toimub Tallinnas
+                            30.09.2026 kell 17:30.
+                            Vabu kohti on 20.
+                        </p>
+
+                        <a href="#purchase">
+                            Osta pilet
+                        </a>
+
+                    </article>
+
+                </li>
+
             </ul>
+
         </section>
 
     </main>
 
-    <script type="module" src="validation.js"></script>
+
+    <script
+        type="module"
+        src="validation.js"
+    ></script>
 
 </body>
 

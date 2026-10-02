@@ -1,0 +1,188 @@
+/* =========================
+   KASTIMUDEL
+   ========================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   LEHE PÕHIPAIGUTUS
+   ========================= */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.page {
+    inline-size: min(100% - 2rem, 75rem);
+    max-inline-size: none;
+    margin-inline: auto;
+    padding-block: 2rem;
+}
+
+
+/* =========================
+   TÜPOGRAAFIA
+   ========================= */
+
+h1 {
+    font-size: clamp(1.75rem, 1rem + 2.5vw, 3rem);
+}
+
+h2 {
+    font-size: clamp(1.35rem, 1rem + 1.2vw, 2rem);
+}
+
+p {
+    max-inline-size: 65ch;
+}
+
+
+/* =========================
+   VORM
+   ========================= */
+
+form {
+    max-inline-size: 40rem;
+    margin-inline: auto;
+    margin-block-end: 3rem;
+}
+
+fieldset {
+    padding: 1.25rem;
+}
+
+label {
+    margin-inline-end: 0.5rem;
+}
+
+.field {
+    inline-size: min(100%, 28rem);
+}
+
+.error {
+    margin-inline-start: 0.5em;
+}
+
+
+/* =========================
+   SÜNDMUSTE OSA
+   ========================= */
+
+.events {
+    inline-size: 100%;
+    max-inline-size: none;
+
+    container-type: inline-size;
+
+    margin-block-start: 3rem;
+}
+
+
+/* =========================
+   SÜNDMUSTE RUUDUSTIK
+   ========================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(16rem, 1fr));
+
+    gap: 1rem;
+
+    inline-size: 100%;
+    max-inline-size: none;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+/* =========================
+   KAART
+   ========================= */
+
+.cards > li.card {
+    inline-size: auto;
+    max-inline-size: none;
+    min-inline-size: 0;
+
+    margin: 0;
+
+    display: grid;
+
+    grid-template-rows:
+        auto
+        1fr
+        auto;
+
+    gap: 0.75rem;
+
+    padding: 1rem;
+
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+
+    background: var(--surface);
+}
+
+
+/* =========================
+   SUBGRID
+   ========================= */
+
+.card-content {
+    display: grid;
+
+    grid-template-rows: subgrid;
+    grid-row: span 3;
+
+    gap: 0.75rem;
+
+    min-inline-size: 0;
+}
+
+
+/* =========================
+   CONTAINER QUERY
+   ========================= */
+
+@container (inline-size > 42rem) {
+
+    .cards > li.card {
+        padding: 1.5rem;
+    }
+
+    .card h3 {
+        font-size: 1.25rem;
+    }
+}
+
+
+/* =========================
+   KAARDI NUPP
+   ========================= */
+
+.card a {
+    display: inline-block;
+
+    inline-size: fit-content;
+
+    padding-block: 0.6rem;
+    padding-inline: 1rem;
+
+    border-radius: var(--radius);
+
+    background: var(--accent);
+    color: var(--accent-text);
+
+    text-decoration: none;
+}
